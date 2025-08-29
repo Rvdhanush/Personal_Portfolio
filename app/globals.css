@@ -18,32 +18,42 @@
     min-height: 100vh;
   }
   
-  /* Aggressive mobile performance optimizations */
+  /* ULTRA AGGRESSIVE mobile performance optimizations */
   @media (max-width: 768px) {
+    /* Disable ALL animations and transitions */
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      transition-delay: 0ms !important;
+      transform: none !important;
+      will-change: auto !important;
+    }
+    
+    /* Force immediate visibility for all elements */
     * {
-      transform: translateZ(0); /* Force hardware acceleration */
-      will-change: auto; /* Reduce GPU usage */
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+    
+    /* Disable Framer Motion completely */
+    [data-framer-component] {
+      transform: none !important;
+      opacity: 1 !important;
+    }
+    
+    /* Force all sections to be visible immediately */
+    section, div, article, main {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+      animation: none !important;
     }
     
     html, body {
-      /* Simpler background for mobile */
       background: #f8fafc;
       background-attachment: scroll;
-      overflow-x: hidden; /* Prevent horizontal scroll */
-    }
-    
-    /* Disable all animations on mobile for maximum performance */
-    *, ::before, ::after {
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.1s !important;
-      transition-delay: 0ms !important;
-    }
-    
-    /* Force immediate rendering */
-    section {
-      opacity: 1 !important;
-      transform: none !important;
+      overflow-x: hidden;
     }
   }
   

@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { GraduationCap, BookOpen, User, Mail, TrendingUp, Zap } from 'lucide-react'
 
 const About = () => {
+  
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
