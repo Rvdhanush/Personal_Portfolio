@@ -25,7 +25,7 @@ const Hero = () => {
   }
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center section-hero texture-overlay text-gray-800 dark:text-gray-100 relative" style={{background: 'linear-gradient(135deg, #f8fafc 0%, #e2e8f0 30%, #f1f5f9 100%)'}}>
+    <section id="home" className="min-h-screen flex items-center justify-center section-hero texture-overlay text-gray-800 dark:text-gray-100 relative">
       <div className="container-custom text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -38,7 +38,7 @@ const Hero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="text-lg text-gray-600 font-medium"
+            className="text-lg text-gray-600 dark:text-gray-300 font-medium"
           >
             Hello, I'm
           </motion.p>
@@ -48,7 +48,7 @@ const Hero = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.4, duration: 0.8 }}
-            className="text-5xl md:text-7xl font-bold text-gray-900"
+            className="text-5xl md:text-7xl font-bold text-gray-900 dark:text-white"
           >
             Dhanush Rathinavelu
           </motion.h1>
@@ -62,7 +62,7 @@ const Hero = () => {
             transition={{ duration: 0.5 }}
             className="h-16 flex items-center justify-center"
           >
-            <h2 className="text-2xl md:text-3xl font-semibold text-primary-600">
+            <h2 className="text-2xl md:text-3xl font-semibold text-primary-600 dark:text-primary-400">
               {titles[currentTitleIndex]}
             </h2>
           </motion.div>
@@ -72,7 +72,7 @@ const Hero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8 }}
-            className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed"
+            className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed"
           >
             Building intelligent systems and data-driven solutions that drive business impact
           </motion.p>
@@ -113,12 +113,12 @@ const Hero = () => {
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center"
+          className="w-6 h-10 border-2 border-gray-400 dark:border-gray-300 rounded-full flex justify-center"
         >
           <motion.div
             animate={{ y: [0, 12, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
-            className="w-1 h-3 bg-gray-400 rounded-full mt-2"
+            className="w-1 h-3 bg-gray-400 dark:bg-gray-300 rounded-full mt-2"
           />
         </motion.div>
       </motion.div>

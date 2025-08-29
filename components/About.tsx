@@ -41,7 +41,7 @@ const About = () => {
         >
           {/* Section Header */}
           <motion.div variants={itemVariants} className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-dark-900 mb-4">
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
               About Me
             </h2>
             <div className="w-24 h-1 bg-primary-600 mx-auto rounded-full"></div>
@@ -55,21 +55,21 @@ const About = () => {
                   <div className="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center">
                     <User className="w-5 h-5 text-primary-600" />
                   </div>
-                  <h3 className="text-xl font-semibold text-dark-900">Professional Summary</h3>
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Professional Summary</h3>
                 </div>
                 <div className="space-y-4">
-                  <p className="text-dark-700 leading-relaxed text-lg">
+                  <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-lg">
                     I am a <span className="font-semibold text-primary-600">results-driven Machine Learning Engineer</span> with a proven track record of building and deploying intelligent systems at scale. With hands-on experience in deploying production-ready ML solutions, I specialize in building end-to-end ML workflows, real-time data pipelines, and LLM-powered applications that drive measurable business impact.
                   </p>
                   
                   <div className="grid sm:grid-cols-2 gap-4 mt-6">
-                    <div className="flex items-center gap-3 p-3 bg-primary-50 rounded-lg">
+                    <div className="flex items-center gap-3 p-3 bg-primary-50 dark:bg-primary-900/20 rounded-lg">
                       <TrendingUp className="w-5 h-5 text-primary-600" />
-                      <span className="text-sm font-medium text-primary-700">Proven Impact</span>
+                      <span className="text-sm font-medium text-primary-700 dark:text-primary-300">Proven Impact</span>
                     </div>
-                    <div className="flex items-center gap-3 p-3 bg-primary-50 rounded-lg">
+                    <div className="flex items-center gap-3 p-3 bg-primary-50 dark:bg-primary-900/20 rounded-lg">
                       <Zap className="w-5 h-5 text-primary-600" />
-                      <span className="text-sm font-medium text-primary-700">Fast Execution</span>
+                      <span className="text-sm font-medium text-primary-700 dark:text-primary-300">Fast Execution</span>
                     </div>
                   </div>
 
@@ -93,13 +93,13 @@ const About = () => {
                   <div className="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center">
                     <GraduationCap className="w-5 h-5 text-primary-600" />
                   </div>
-                  <h3 className="text-xl font-semibold text-dark-900">Education</h3>
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Education</h3>
                 </div>
                 <div className="space-y-3">
                   <div>
-                    <h4 className="font-semibold text-dark-800">MSc in Artificial Intelligence & Machine Learning</h4>
-                    <p className="text-dark-600">Coimbatore Institute of Technology</p>
-                    <p className="text-sm text-dark-500">2021–2026</p>
+                    <h4 className="font-semibold text-gray-800 dark:text-gray-200">MSc in Artificial Intelligence & Machine Learning</h4>
+                    <p className="text-gray-600 dark:text-gray-300">Coimbatore Institute of Technology</p>
+                    <p className="text-sm text-gray-500 dark:text-gray-400">2021–2026</p>
                   </div>
                 </div>
               </div>
@@ -113,7 +113,7 @@ const About = () => {
                 <div className="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center">
                   <BookOpen className="w-5 h-5 text-primary-600" />
                 </div>
-                <h3 className="text-xl font-semibold text-dark-900">Relevant Coursework</h3>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Relevant Coursework</h3>
               </div>
               <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-3">
                 {[
@@ -125,7 +125,7 @@ const About = () => {
                 ].map((course, index) => (
                   <div
                     key={index}
-                    className="bg-primary-50 text-primary-700 px-3 py-2 rounded-lg text-sm font-medium text-center"
+                    className="bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300 px-3 py-2 rounded-lg text-sm font-medium text-center"
                   >
                     {course}
                   </div>
