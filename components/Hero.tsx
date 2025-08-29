@@ -109,6 +109,22 @@ const Hero = () => {
           {/* CTA Buttons */}
           {isMobile ? (
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <a
+                href="/71762134012_PROFILE (1) (2).pdf"
+                download="Dhanush_Rathinavelu_Resume.pdf"
+                className="btn-primary inline-flex items-center gap-2"
+              >
+                <Download size={20} />
+                Download Resume
+              </a>
+              <button
+                onClick={scrollToAbout}
+                className="btn-secondary inline-flex items-center gap-2"
+              >
+                Learn More
+                <ArrowDown size={20} />
+              </button>
+            </div>
           ) : (
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -116,23 +132,23 @@ const Hero = () => {
               transition={{ delay: 1, duration: 0.5 }}
               className="flex flex-col sm:flex-row gap-4 justify-center items-center"
             >
+              <a
+                href="/71762134012_PROFILE (1) (2).pdf"
+                download="Dhanush_Rathinavelu_Resume.pdf"
+                className="btn-primary inline-flex items-center gap-2"
+              >
+                <Download size={20} />
+                Download Resume
+              </a>
+              <button
+                onClick={scrollToAbout}
+                className="btn-secondary inline-flex items-center gap-2"
+              >
+                Learn More
+                <ArrowDown size={20} />
+              </button>
+            </motion.div>
           )}
-            <a
-              href="/71762134012_PROFILE (1) (2).pdf"
-              download="Dhanush_Rathinavelu_Resume.pdf"
-              className="btn-primary inline-flex items-center gap-2"
-            >
-              <Download size={20} />
-              Download Resume
-            </a>
-            <button
-              onClick={scrollToAbout}
-              className="btn-secondary inline-flex items-center gap-2"
-            >
-              Learn More
-              <ArrowDown size={20} />
-            </button>
-          {isMobile ? </div> : </motion.div>}
         </motion.div>
       </div>
 
