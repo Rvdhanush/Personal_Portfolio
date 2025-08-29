@@ -6,7 +6,7 @@
   html {
     scroll-behavior: smooth;
     background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%);
-    background-attachment: fixed;
+    /* Remove background-attachment: fixed for mobile performance */
   }
   
   body {
@@ -14,8 +14,30 @@
     line-height: 1.6;
     color: #1f2937;
     background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%);
-    background-attachment: fixed;
+    /* Remove background-attachment: fixed for mobile performance */
     min-height: 100vh;
+  }
+  
+  /* Mobile performance optimizations */
+  @media (max-width: 768px) {
+    * {
+      transform: translateZ(0); /* Force hardware acceleration */
+    }
+    
+    html, body {
+      /* Simpler background for mobile */
+      background: #f8fafc;
+      background-attachment: scroll;
+    }
+    
+    /* Reduce motion for mobile performance */
+    @media (prefers-reduced-motion: reduce) {
+      *, ::before, ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
   }
   
   * {
@@ -31,6 +53,14 @@
     body {
       color: #f9fafb;
       background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+    }
+    
+    /* Dark mode mobile optimizations */
+    @media (max-width: 768px) {
+      html, body {
+        /* Simpler dark background for mobile */
+        background: #111827;
+      }
     }
   }
   
@@ -76,6 +106,29 @@
   /* Enhanced Cards */
   .card {
     @apply bg-white/90 backdrop-blur-sm rounded-xl shadow-lg border border-gray-200/50 p-6 hover:shadow-xl transition-all duration-300 dark:bg-gray-800/90 dark:border-gray-700/50 dark:text-white;
+  }
+  
+  /* Mobile performance optimizations */
+  @media (max-width: 768px) {
+    .section-hero {
+      @apply bg-gray-50 dark:bg-gray-900; /* Simpler backgrounds for mobile */
+    }
+    
+    .section-light {
+      @apply bg-white dark:bg-gray-800; /* Remove backdrop-blur for mobile */
+    }
+    
+    .section-muted {
+      @apply bg-gray-50 dark:bg-gray-900; /* Remove backdrop-blur for mobile */
+    }
+    
+    .card {
+      @apply bg-white dark:bg-gray-800 shadow-md hover:shadow-lg transition-shadow duration-200; /* Simplified cards for mobile */
+    }
+    
+    .texture-overlay::before {
+      display: none; /* Remove texture overlay on mobile */
+    }
   }
   
   .btn-primary {
