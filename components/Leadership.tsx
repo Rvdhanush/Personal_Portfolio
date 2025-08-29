@@ -63,11 +63,11 @@ const Leadership = () => {
         >
           {/* Section Header */}
           <motion.div variants={itemVariants} className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-dark-900 mb-4">
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
               Leadership & Activities
             </h2>
             <div className="w-24 h-1 bg-primary-600 mx-auto rounded-full"></div>
-            <p className="text-lg text-dark-600 mt-4">
+            <p className="text-lg text-gray-600 dark:text-gray-300 mt-4">
               Demonstrating leadership through community building and knowledge sharing
             </p>
           </motion.div>
@@ -78,13 +78,13 @@ const Leadership = () => {
               <div className="w-20 h-20 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Award className="w-10 h-10 text-primary-600" />
               </div>
-              <h3 className="text-3xl font-bold text-dark-900 mb-2">
+              <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
                 {leadership.role}
               </h3>
               <p className="text-xl text-primary-600 font-semibold mb-2">
                 {leadership.organization}
               </p>
-              <p className="text-dark-600">
+              <p className="text-gray-600 dark:text-gray-300">
                 {leadership.duration}
               </p>
             </div>
@@ -94,18 +94,18 @@ const Leadership = () => {
                 <motion.div
                   key={index}
                   variants={itemVariants}
-                  className="text-center p-6 bg-dark-50 rounded-xl border border-dark-100"
+                  className="text-center p-6 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-100 dark:border-gray-700"
                 >
                   <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mx-auto mb-4">
                     <achievement.icon className="w-6 h-6 text-primary-600" />
                   </div>
-                  <h4 className="text-lg font-semibold text-dark-800 mb-2">
+                  <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-2">
                     {achievement.title}
                   </h4>
-                  <p className="text-dark-600 mb-3 text-sm leading-relaxed">
+                  <p className="text-gray-600 dark:text-gray-300 mb-3 text-sm leading-relaxed">
                     {achievement.description}
                   </p>
-                  <div className="inline-block bg-primary-100 text-primary-700 px-3 py-1 rounded-full text-sm font-semibold">
+                  <div className="inline-block bg-primary-100 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300 px-3 py-1 rounded-full text-sm font-semibold">
                     {achievement.metric}
                   </div>
                 </motion.div>
@@ -115,11 +115,11 @@ const Leadership = () => {
 
           {/* Impact Summary */}
           <motion.div variants={itemVariants} className="text-center">
-            <div className="bg-gradient-to-r from-primary-50 to-blue-50 rounded-xl p-8 border border-primary-200">
-              <h3 className="text-xl font-semibold text-dark-800 mb-4">
+            <div className="bg-gradient-to-r from-primary-50 to-blue-50 dark:from-primary-900/20 dark:to-blue-900/20 rounded-xl p-8 border border-primary-200 dark:border-primary-700">
+              <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4">
                 Impact & Legacy
               </h3>
-              <p className="text-dark-600 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
                 During my tenure as Innovation Head, I successfully transformed the FOSS Club into a vibrant hub of 
                 technological innovation and learning. The initiatives we launched continue to inspire students to 
                 explore open-source technologies and contribute to the global developer community. This experience 

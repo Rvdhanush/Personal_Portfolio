@@ -65,11 +65,11 @@ const Experience = () => {
         >
           {/* Section Header */}
           <motion.div variants={itemVariants} className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-dark-900 mb-4">
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
               Professional Experience
             </h2>
             <div className="w-24 h-1 bg-primary-600 mx-auto rounded-full"></div>
-            <p className="text-lg text-dark-600 mt-4">
+            <p className="text-lg text-gray-600 dark:text-gray-300 mt-4">
               Hands-on experience in building and deploying intelligent systems at scale
             </p>
           </motion.div>
@@ -83,12 +83,12 @@ const Experience = () => {
                   <Briefcase className="w-6 h-6 text-primary-600" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-dark-900">{experience.position}</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white">{experience.position}</h3>
                   <p className="text-xl text-primary-600 font-semibold">{experience.company}</p>
                 </div>
               </div>
               
-              <div className="flex flex-col sm:flex-row gap-4 text-sm text-dark-600">
+              <div className="flex flex-col sm:flex-row gap-4 text-sm text-gray-600 dark:text-gray-300">
                 <div className="flex items-center gap-2">
                   <Calendar className="w-4 h-4" />
                   <span>{experience.duration}</span>
@@ -102,7 +102,7 @@ const Experience = () => {
 
             {/* Achievements */}
             <div className="space-y-6">
-              <h4 className="text-lg font-semibold text-dark-800 mb-4">Key Achievements & Impact</h4>
+              <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4">Key Achievements & Impact</h4>
               
               {experience.achievements.map((achievement, index) => (
                 <motion.div
@@ -113,15 +113,15 @@ const Experience = () => {
                   <div className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-primary-500 rounded-full mt-2 flex-shrink-0"></div>
                     <div className="flex-1">
-                      <h5 className="font-semibold text-dark-800 mb-1">
+                      <h5 className="font-semibold text-gray-800 dark:text-gray-200 mb-1">
                         {achievement.title}
                       </h5>
-                      <p className="text-dark-600 mb-2">
+                      <p className="text-gray-600 dark:text-gray-300 mb-2">
                         {achievement.description}
                       </p>
                       <div className="flex items-center gap-2 text-sm">
                         <TrendingUp className="w-4 h-4 text-green-600" />
-                        <span className="text-green-700 font-medium">
+                        <span className="text-green-700 dark:text-green-400 font-medium">
                           {achievement.impact}
                         </span>
                       </div>
@@ -132,8 +132,8 @@ const Experience = () => {
             </div>
 
             {/* Technologies Used */}
-            <div className="mt-8 pt-6 border-t border-dark-100">
-              <h4 className="text-lg font-semibold text-dark-800 mb-4">Technologies & Tools</h4>
+            <div className="mt-8 pt-6 border-t border-gray-100 dark:border-gray-700">
+              <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4">Technologies & Tools</h4>
               <div className="flex flex-wrap gap-2">
                 {[
                   'Python', 'Google Cloud Platform', 'BigQuery', 'Pub/Sub', 'FastAPI', 
@@ -143,7 +143,7 @@ const Experience = () => {
                 ].map((tech, index) => (
                   <span
                     key={index}
-                    className="px-3 py-2 bg-primary-50 text-primary-700 rounded-lg text-sm font-medium border border-primary-200"
+                    className="px-3 py-2 bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300 rounded-lg text-sm font-medium border border-primary-200 dark:border-primary-700"
                   >
                     {tech}
                   </span>
@@ -154,11 +154,11 @@ const Experience = () => {
 
           {/* Future Focus */}
           <motion.div variants={itemVariants} className="mt-8 text-center">
-            <div className="bg-gradient-to-r from-primary-50 to-blue-50 rounded-xl p-6 border border-primary-200">
-              <h3 className="text-lg font-semibold text-dark-800 mb-3">
+            <div className="bg-gradient-to-r from-primary-50 to-blue-50 dark:from-primary-900/20 dark:to-blue-900/20 rounded-xl p-6 border border-primary-200 dark:border-primary-700">
+              <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-3">
                 Looking Forward
               </h3>
-              <p className="text-dark-600 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed">
                 I'm actively seeking opportunities to apply my ML engineering skills in challenging environments, 
                 where I can contribute to building next-generation AI systems and continue growing as a professional. 
                 My experience at Schnell Energy has given me valuable insights into real-world ML deployment challenges.

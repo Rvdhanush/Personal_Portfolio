@@ -90,21 +90,21 @@ const Projects = () => {
 
   const getColorClasses = (color: string) => {
     const colors = {
-      primary: 'bg-primary-100 text-primary-700',
-      blue: 'bg-blue-100 text-blue-700',
-      green: 'bg-green-100 text-green-700',
-      purple: 'bg-purple-100 text-purple-700',
-      orange: 'bg-orange-100 text-orange-700',
-      indigo: 'bg-indigo-100 text-indigo-700'
+      primary: 'bg-primary-100 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300',
+      blue: 'bg-blue-100 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300',
+      green: 'bg-green-100 dark:bg-green-900/20 text-green-700 dark:text-green-300',
+      purple: 'bg-purple-100 dark:bg-purple-900/20 text-purple-700 dark:text-purple-300',
+      orange: 'bg-orange-100 dark:bg-orange-900/20 text-orange-700 dark:text-orange-300',
+      indigo: 'bg-indigo-100 dark:bg-indigo-900/20 text-indigo-700 dark:text-indigo-300'
     }
     return colors[color as keyof typeof colors] || colors.primary
   }
 
   const getPriorityBadge = (priority: string) => {
     const badges = {
-      main: { text: 'Main Project', color: 'bg-green-100 text-green-700 border-green-200' },
-      side: { text: 'Side Project', color: 'bg-blue-100 text-blue-700 border-blue-200' },
-      schnell: { text: 'Schnell Project', color: 'bg-purple-100 text-purple-700 border-purple-200' }
+      main: { text: 'Main Project', color: 'bg-green-100 dark:bg-green-900/20 text-green-700 dark:text-green-300 border-green-200 dark:border-green-700' },
+      side: { text: 'Side Project', color: 'bg-blue-100 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 border-blue-200 dark:border-blue-700' },
+      schnell: { text: 'Schnell Project', color: 'bg-purple-100 dark:bg-purple-900/20 text-purple-700 dark:text-purple-300 border-purple-200 dark:border-purple-700' }
     }
     return badges[priority as keyof typeof badges] || badges.side
   }
@@ -120,18 +120,18 @@ const Projects = () => {
         >
           {/* Section Header */}
           <motion.div variants={itemVariants} className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-dark-900 mb-4">
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
               Featured Projects
             </h2>
             <div className="w-24 h-1 bg-primary-600 mx-auto rounded-full"></div>
-            <p className="text-lg text-dark-600 mt-4 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 dark:text-gray-300 mt-4 max-w-2xl mx-auto">
               A showcase of my technical expertise and problem-solving approach through real-world projects
             </p>
           </motion.div>
 
           {/* Project Priority Legend */}
           <motion.div variants={itemVariants} className="mb-8 text-center">
-            <div className="inline-flex gap-4 text-sm">
+            <div className="inline-flex gap-4 text-sm text-gray-600 dark:text-gray-300">
               <span className="flex items-center gap-2">
                 <div className="w-3 h-3 bg-green-500 rounded-full"></div>
                 Main Projects
@@ -162,36 +162,36 @@ const Projects = () => {
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center gap-2 mb-2">
-                      <h3 className="text-xl font-bold text-dark-900 group-hover:text-primary-600 transition-colors">
+                      <h3 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-primary-600 transition-colors">
                         {project.title}
                       </h3>
                       <span className={`px-2 py-1 rounded-full text-xs font-medium border ${getPriorityBadge(project.priority).color}`}>
                         {getPriorityBadge(project.priority).text}
                       </span>
                     </div>
-                    <p className="text-dark-600 leading-relaxed">
+                    <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                       {project.description}
                     </p>
                   </div>
                 </div>
 
                 {/* Impact */}
-                <div className="mb-4 p-3 bg-green-50 border border-green-200 rounded-lg">
+                <div className="mb-4 p-3 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-700 rounded-lg">
                   <div className="flex items-center gap-2 mb-2">
                     <TrendingUp className="w-4 h-4 text-green-600" />
-                    <span className="text-sm font-semibold text-green-700">Impact</span>
+                    <span className="text-sm font-semibold text-green-700 dark:text-green-300">Impact</span>
                   </div>
-                  <p className="text-sm text-green-800">{project.impact}</p>
+                  <p className="text-sm text-green-800 dark:text-green-200">{project.impact}</p>
                 </div>
 
                 {/* Technologies */}
                 <div className="mb-6">
-                  <h4 className="text-sm font-semibold text-dark-700 mb-3">Technologies Used</h4>
+                  <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">Technologies Used</h4>
                   <div className="flex flex-wrap gap-2">
                     {project.technologies.map((tech, techIndex) => (
                       <span
                         key={techIndex}
-                        className="px-2 py-1 bg-dark-100 text-dark-700 rounded-md text-xs font-medium"
+                        className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-md text-xs font-medium"
                       >
                         {tech}
                       </span>
@@ -200,19 +200,19 @@ const Projects = () => {
                 </div>
 
                 {/* Project Links */}
-                <div className="flex gap-3 pt-4 border-t border-dark-100">
+                <div className="flex gap-3 pt-4 border-t border-gray-100 dark:border-gray-700">
                   <a
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-dark-600 hover:text-primary-600 transition-colors text-sm font-medium"
+                    className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 transition-colors text-sm font-medium"
                   >
                     <Github size={16} />
                     View Code
                   </a>
                   <a
                     href={project.demo}
-                    className="flex items-center gap-2 text-dark-600 hover:text-primary-600 transition-colors text-sm font-medium"
+                    className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 transition-colors text-sm font-medium"
                   >
                     <ExternalLink size={16} />
                     Live Demo
@@ -224,11 +224,11 @@ const Projects = () => {
 
           {/* Call to Action */}
           <motion.div variants={itemVariants} className="mt-12 text-center">
-            <div className="bg-white rounded-xl p-8 shadow-lg border border-dark-100">
-              <h3 className="text-xl font-semibold text-dark-800 mb-3">
+            <div className="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-lg border border-gray-100 dark:border-gray-700">
+              <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-3">
                 Interested in Collaborating?
               </h3>
-              <p className="text-dark-600 mb-6 max-w-2xl mx-auto">
+              <p className="text-gray-600 dark:text-gray-300 mb-6 max-w-2xl mx-auto">
                 I'm always open to discussing new opportunities, interesting projects, or potential collaborations. 
                 Let's build something amazing together!
               </p>
