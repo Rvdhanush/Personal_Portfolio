@@ -16,10 +16,12 @@ const Hero = () => {
   ]
 
   useEffect(() => {
-    // Slower animation interval on mobile for better performance
+    // Disable title animation on mobile for better performance
+    if (isMobile) return
+    
     const interval = setInterval(() => {
       setCurrentTitleIndex((prev) => (prev + 1) % titles.length)
-    }, isMobile ? 4000 : 3000)
+    }, 3000)
     return () => clearInterval(interval)
   }, [titles.length, isMobile])
 
@@ -35,56 +37,86 @@ const Hero = () => {
           className="space-y-6"
         >
           {/* Greeting */}
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: isMobile ? 0.1 : 0.2, duration: isMobile ? 0.3 : 0.5 }}
-            className="text-lg text-gray-600 dark:text-gray-300 font-medium"
-          >
-            Hello, I'm
-          </motion.p>
+          {isMobile ? (
+            <p className="text-lg text-gray-600 dark:text-gray-300 font-medium">
+              Hello, I'm
+            </p>
+          ) : (
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+              className="text-lg text-gray-600 dark:text-gray-300 font-medium"
+            >
+              Hello, I'm
+            </motion.p>
+          )}
 
           {/* Name */}
-          <motion.h1
-            initial={{ opacity: 0, scale: isMobile ? 1 : 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: isMobile ? 0.2 : 0.4, duration: isMobile ? 0.4 : 0.8 }}
-            className="text-5xl md:text-7xl font-bold text-gray-900 dark:text-white"
-          >
-            Dhanush Rathinavelu
-          </motion.h1>
+          {isMobile ? (
+            <h1 className="text-5xl md:text-7xl font-bold text-gray-900 dark:text-white">
+              Dhanush Rathinavelu
+            </h1>
+          ) : (
+            <motion.h1
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+              className="text-5xl md:text-7xl font-bold text-gray-900 dark:text-white"
+            >
+              Dhanush Rathinavelu
+            </motion.h1>
+          )}
 
-          {/* Animated Titles */}
-          <motion.div
-            key={currentTitleIndex}
-            initial={{ opacity: 0, y: isMobile ? 0 : 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: isMobile ? 0 : -20 }}
-            transition={{ duration: isMobile ? 0.3 : 0.5 }}
-            className="h-16 flex items-center justify-center"
-          >
-            <h2 className="text-2xl md:text-3xl font-semibold text-primary-600 dark:text-primary-400">
-              {titles[currentTitleIndex]}
-            </h2>
-          </motion.div>
+          {/* Animated Titles - Static on mobile */}
+          {isMobile ? (
+            <div className="h-16 flex items-center justify-center">
+              <h2 className="text-2xl md:text-3xl font-semibold text-primary-600 dark:text-primary-400">
+                {titles[0]} {/* Show first title only on mobile */}
+              </h2>
+            </div>
+          ) : (
+            <motion.div
+              key={currentTitleIndex}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.5 }}
+              className="h-16 flex items-center justify-center"
+            >
+              <h2 className="text-2xl md:text-3xl font-semibold text-primary-600 dark:text-primary-400">
+                {titles[currentTitleIndex]}
+              </h2>
+            </motion.div>
+          )}
 
           {/* Description */}
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: isMobile ? 0.3 : 0.8, duration: isMobile ? 0.3 : 0.5 }}
-            className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed"
-          >
-            Building intelligent systems and data-driven solutions that drive business impact
-          </motion.p>
+          {isMobile ? (
+            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed">
+              Building intelligent systems and data-driven solutions that drive business impact
+            </p>
+          ) : (
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.8, duration: 0.5 }}
+              className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed"
+            >
+              Building intelligent systems and data-driven solutions that drive business impact
+            </motion.p>
+          )}
 
           {/* CTA Buttons */}
-          <motion.div
-            initial={{ opacity: 0, y: isMobile ? 0 : 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: isMobile ? 0.4 : 1, duration: isMobile ? 0.3 : 0.5 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-          >
+          {isMobile ? (
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          ) : (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1, duration: 0.5 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            >
+          )}
             <a
               href="/71762134012_PROFILE (1) (2).pdf"
               download="Dhanush_Rathinavelu_Resume.pdf"
@@ -100,7 +132,7 @@ const Hero = () => {
               Learn More
               <ArrowDown size={20} />
             </button>
-          </motion.div>
+          {isMobile ? </div> : </motion.div>}
         </motion.div>
       </div>
 
