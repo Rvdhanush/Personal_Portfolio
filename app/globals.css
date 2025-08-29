@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%);
+    background-attachment: fixed;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #1f2937;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    body {
+      color: #f9fafb;
+      background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+    }
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+  
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent;
+  }
+  
+  /* Section Backgrounds */
+  .section-hero {
+    @apply bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900;
+  }
+  
+  .section-light {
+    @apply bg-white/80 backdrop-blur-sm dark:bg-gray-800/80;
+  }
+  
+  .section-muted {
+    @apply bg-gray-50/80 backdrop-blur-sm dark:bg-gray-900/80;
+  }
+  
+  .section-contrast {
+    @apply bg-gray-100 dark:bg-gray-950;
+  }
+  
+  /* Enhanced Cards */
+  .card {
+    @apply bg-white/90 backdrop-blur-sm rounded-xl shadow-lg border border-gray-200/50 p-6 hover:shadow-xl transition-all duration-300 dark:bg-gray-800/90 dark:border-gray-700/50;
+  }
+  
+  .btn-primary {
+    @apply bg-primary-600 text-white px-6 py-3 rounded-lg hover:bg-primary-700 transition-colors font-medium shadow-lg hover:shadow-xl;
+  }
+  
+  .btn-secondary {
+    @apply bg-white/90 text-primary-600 border-2 border-primary-600 px-6 py-3 rounded-lg hover:bg-primary-600 hover:text-white transition-colors font-medium backdrop-blur-sm dark:bg-gray-800/90 dark:text-primary-400 dark:border-primary-400;
+  }
+  
+  .nav-link {
+    @apply text-gray-600 hover:text-primary-600 transition-colors font-medium dark:text-gray-300 dark:hover:text-primary-400;
+  }
+  
+  .nav-link-active {
+    @apply text-primary-600 font-semibold dark:text-primary-400;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  /* Subtle texture overlay */
+  .texture-overlay {
+    position: relative;
+  }
+  
+  .texture-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.4'%3E%3Ccircle cx='7' cy='7' r='1'/%3E%3Ccircle cx='27' cy='7' r='1'/%3E%3Ccircle cx='47' cy='7' r='1'/%3E%3Ccircle cx='7' cy='27' r='1'/%3E%3Ccircle cx='27' cy='27' r='1'/%3E%3Ccircle cx='47' cy='27' r='1'/%3E%3Ccircle cx='7' cy='47' r='1'/%3E%3Ccircle cx='27' cy='47' r='1'/%3E%3Ccircle cx='47' cy='47' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
+  }
+}
