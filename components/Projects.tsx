@@ -6,17 +6,6 @@ import { Github, ExternalLink, TrendingUp, Code, Brain, Shield, Mic, Car, Messag
 const Projects = () => {
   const projects = [
     {
-      title: 'AI-Powered Public Speaking Training Platform',
-      description: 'Comprehensive platform for improving public speaking skills using AI-driven feedback, speech analysis, and personalized training modules.',
-      impact: 'Helps users develop confidence and improve communication skills through AI-powered coaching and real-time feedback.',
-      technologies: ['AI/ML', 'Speech Recognition', 'NLP', 'Python', 'React', 'TensorFlow', 'OpenAI API'],
-      icon: Mic,
-      github: 'https://github.com/Rvdhanush/AI-Powered-Public-Speaking-Training-Platform',
-      demo: '#',
-      color: 'primary',
-      priority: 'main'
-    },
-    {
       title: 'LanPaint-ComfyUI',
       description: 'Interactive local image editing and generation workflow built on ComfyUI with efficient diffusion pipelines and node customizations.',
       impact: 'Delivered high-quality controllable image edits with streamlined UX for local creative workflows.',
@@ -25,17 +14,6 @@ const Projects = () => {
       github: 'https://github.com/Rvdhanush/LanPaint-ComfyUI',
       demo: '#',
       color: 'blue',
-      priority: 'main'
-    },
-    {
-      title: 'Adaptive RAG System with Web Search',
-      description: 'Intelligent question-answering system combining document retrieval with web search capabilities and LLM-based document grading.',
-      impact: 'Implemented LLM-based document grading to filter irrelevant results, improving answer quality by 35%.',
-      technologies: ['RAG', 'LLM', 'Web Search', 'Document Grading', 'Python', 'FastAPI', 'Vector DB'],
-      icon: Brain,
-      github: 'https://github.com/Rvdhanush/-Adaptive-RAG-system-with-web-search',
-      demo: '#',
-      color: 'green',
       priority: 'main'
     },
     {
@@ -56,6 +34,28 @@ const Projects = () => {
       technologies: ['RAG', 'LLM', 'Python', 'FastAPI', 'Vector DB'],
       icon: Brain,
       github: 'https://github.com/Rvdhanush/CLIMATEgpt',
+      demo: '#',
+      color: 'green',
+      priority: 'main'
+    },
+    {
+      title: 'AI-Powered Public Speaking Training Platform',
+      description: 'Comprehensive platform for improving public speaking skills using AI-driven feedback, speech analysis, and personalized training modules.',
+      impact: 'Helps users develop confidence and improve communication skills through AI-powered coaching and real-time feedback.',
+      technologies: ['AI/ML', 'Speech Recognition', 'NLP', 'Python', 'React', 'TensorFlow', 'OpenAI API'],
+      icon: Mic,
+      github: 'https://github.com/Rvdhanush/AI-Powered-Public-Speaking-Training-Platform',
+      demo: '#',
+      color: 'primary',
+      priority: 'main'
+    },
+    {
+      title: 'Adaptive RAG System with Web Search',
+      description: 'Intelligent question-answering system combining document retrieval with web search capabilities and LLM-based document grading.',
+      impact: 'Implemented LLM-based document grading to filter irrelevant results, improving answer quality by 35%.',
+      technologies: ['RAG', 'LLM', 'Web Search', 'Document Grading', 'Python', 'FastAPI', 'Vector DB'],
+      icon: Brain,
+      github: 'https://github.com/Rvdhanush/-Adaptive-RAG-system-with-web-search',
       demo: '#',
       color: 'green',
       priority: 'main'
