@@ -7,32 +7,30 @@ const Skills = () => {
   // Devicon-based icon set for compact, responsive grid
   const techIcons = [
     { name: 'Python', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
-    { name: 'C++', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg' },
-    { name: 'React', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
-    { name: 'Node.js', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' },
-    { name: 'TailwindCSS', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg' },
-    { name: 'Bootstrap', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg' },
-    { name: 'Flask', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg' },
-    { name: 'FastAPI', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg' },
-    { name: 'MySQL', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
-    { name: 'MongoDB', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg' },
-    { name: 'Docker', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' },
-    { name: 'Git', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
-    { name: 'AWS', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg' },
-    { name: 'Kubernetes', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg' },
-    { name: 'Selenium', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg' },
-    { name: 'OpenCV', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg' },
-    { name: 'spaCy', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spacy/spacy-original.svg' },
     { name: 'NumPy', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg' },
     { name: 'Pandas', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg' },
+    { name: 'SciPy', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scipy/scipy-original.svg' },
+    { name: 'scikit-learn', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg' },
     { name: 'TensorFlow', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg' },
     { name: 'PyTorch', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg' },
     { name: 'Keras', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/keras/keras-original.svg' },
+    { name: 'OpenCV', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg' },
+    { name: 'spaCy', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spacy/spacy-original.svg' },
+    { name: 'Jupyter', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg' },
+    { name: 'Anaconda', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/anaconda/anaconda-original.svg' },
     { name: 'Matplotlib', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg' },
     { name: 'Seaborn', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/seaborn/seaborn-original.svg' },
+    { name: 'Plotly', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/plotly/plotly-original.svg' },
+    { name: 'FastAPI', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg' },
+    { name: 'Flask', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg' },
+    { name: 'Docker', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' },
+    { name: 'Kubernetes', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg' },
+    { name: 'AWS', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg' },
+    { name: 'GCP', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg' },
     { name: 'PostgreSQL', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' },
+    { name: 'MongoDB', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg' },
     { name: 'Redis', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg' },
-    { name: 'Firebase', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg' },
+    { name: 'Selenium', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg' },
     { name: 'VS Code', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg' }
   ]
 
@@ -83,11 +81,11 @@ const Skills = () => {
 
           {/* Skills Icon Wall - mobile static, desktop subtle hover */}
           <motion.div variants={itemVariants}>
-            <div className="grid gap-4 [grid-template-columns:repeat(auto-fit,minmax(72px,1fr))]">
+            <div className="grid gap-4 [grid-template-columns:repeat(auto-fit,minmax(80px,1fr))]">
               {techIcons.map((tech) => (
                 <div
                   key={tech.name}
-                  className="rounded-xl bg-white/60 dark:bg-dark-800/60 border border-gray-200 dark:border-dark-700 p-4 flex items-center justify-center transition-transform md:hover:scale-105 md:hover:shadow-lg"
+                  className="rounded-xl bg-white/60 dark:bg-dark-800/60 border border-gray-200 dark:border-dark-700 p-4 flex items-center justify-center transition-transform md:hover:scale-105 md:hover:shadow-lg md:transform-gpu"
                   aria-label={tech.name}
                   title={tech.name}
                 >
@@ -95,7 +93,8 @@ const Skills = () => {
                     src={tech.src}
                     alt={tech.name}
                     loading="lazy"
-                    className="h-8 w-8 md:h-10 md:w-10"
+                    decoding="async"
+                    className="h-10 w-10 md:h-12 md:w-12"
                   />
                 </div>
               ))}
