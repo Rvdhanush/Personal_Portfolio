@@ -1,15 +1,16 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Code, Database, Cloud, Wrench } from 'lucide-react'
+import { Code, Database, Cloud, Wrench, Sigma, BarChart3 } from 'lucide-react'
 
 const Skills = () => {
   // Devicon-based icon set for compact, responsive grid
-  const techIcons = [
+  type Tech = { name: string; src?: string; Icon?: any; colorClass?: string }
+  const techIcons: Tech[] = [
     { name: 'Python', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
     { name: 'NumPy', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg' },
     { name: 'Pandas', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg' },
-    { name: 'SciPy', src: 'https://www.vectorlogo.zone/logos/scipy/scipy-icon.svg' },
+    { name: 'SciPy', Icon: Sigma, colorClass: 'text-indigo-500' },
     { name: 'scikit-learn', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg' },
     { name: 'TensorFlow', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg' },
     { name: 'PyTorch', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg' },
@@ -19,7 +20,7 @@ const Skills = () => {
     { name: 'Jupyter', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg' },
     { name: 'Anaconda', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/anaconda/anaconda-original.svg' },
     { name: 'Matplotlib', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg' },
-    { name: 'Seaborn', src: 'https://cdn.simpleicons.org/seaborn/4C78A8' },
+    { name: 'Seaborn', Icon: BarChart3, colorClass: 'text-sky-600' },
     { name: 'Plotly', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/plotly/plotly-original.svg' },
     { name: 'FastAPI', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg' },
     { name: 'Flask', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg' },
@@ -89,13 +90,17 @@ const Skills = () => {
                   aria-label={tech.name}
                   title={tech.name}
                 >
-                  <img
-                    src={tech.src}
-                    alt={tech.name}
-                    loading="lazy"
-                    decoding="async"
-                    className="h-10 w-10 md:h-12 md:w-12"
-                  />
+                  {tech.Icon ? (
+                    <tech.Icon className={`h-10 w-10 md:h-12 md:w-12 ${tech.colorClass || 'text-gray-700 dark:text-gray-200'}`} />
+                  ) : (
+                    <img
+                      src={tech.src as string}
+                      alt={tech.name}
+                      loading="lazy"
+                      decoding="async"
+                      className="h-10 w-10 md:h-12 md:w-12"
+                    />
+                  )}
                 </div>
               ))}
             </div>
