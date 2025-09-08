@@ -4,42 +4,36 @@ import { motion } from 'framer-motion'
 import { Code, Database, Cloud, Wrench } from 'lucide-react'
 
 const Skills = () => {
-  const skillCategories = [
-    {
-      icon: Code,
-      title: 'Programming Languages',
-      skills: ['Python', 'C', 'SQL', 'JavaScript', 'HTML/CSS'],
-      color: 'primary'
-    },
-    {
-      icon: Database,
-      title: 'Libraries & Frameworks',
-      skills: [
-        'Pandas', 'NumPy', 'Scikit-learn', 'NLTK', 'Matplotlib', 'PyTorch', 'FastAPI', 'LangChain',
-        'TensorFlow', 'Keras', 'OpenCV', 'SpaCy', 'Transformers', 'Hugging Face', 'Streamlit',
-        'Plotly', 'Seaborn', 'XGBoost', 'LightGBM', 'CatBoost', 'Gensim', 'TextBlob'
-      ],
-      color: 'blue'
-    },
-    {
-      icon: Cloud,
-      title: 'Cloud & Databases',
-      skills: [
-        'Google Cloud Platform', 'BigQuery', 'AWS (Beginner)', 'Vector Databases',
-        'MongoDB', 'PostgreSQL', 'Redis', 'Elasticsearch', 'Firebase', 'Docker Hub'
-      ],
-      color: 'green'
-    },
-    {
-      icon: Wrench,
-      title: 'Tools & Technologies',
-      skills: [
-        'Git', 'Docker', 'Postman', 'ThingsBoard', 'Jupyter Notebook', 'Google Colab',
-        'VS Code', 'PyCharm', 'Tableau', 'Power BI', 'Apache Kafka', 'Apache Spark',
-        'MLflow', 'Weights & Biases', 'TensorBoard', 'Gradio', 'Hugging Face Spaces'
-      ],
-      color: 'purple'
-    }
+  // Devicon-based icon set for compact, responsive grid
+  const techIcons = [
+    { name: 'Python', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
+    { name: 'C++', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg' },
+    { name: 'React', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
+    { name: 'Node.js', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' },
+    { name: 'TailwindCSS', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg' },
+    { name: 'Bootstrap', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg' },
+    { name: 'Flask', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg' },
+    { name: 'FastAPI', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg' },
+    { name: 'MySQL', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
+    { name: 'MongoDB', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg' },
+    { name: 'Docker', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' },
+    { name: 'Git', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
+    { name: 'AWS', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg' },
+    { name: 'Kubernetes', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg' },
+    { name: 'Selenium', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg' },
+    { name: 'OpenCV', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg' },
+    { name: 'spaCy', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spacy/spacy-original.svg' },
+    { name: 'NumPy', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg' },
+    { name: 'Pandas', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg' },
+    { name: 'TensorFlow', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg' },
+    { name: 'PyTorch', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg' },
+    { name: 'Keras', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/keras/keras-original.svg' },
+    { name: 'Matplotlib', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg' },
+    { name: 'Seaborn', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/seaborn/seaborn-original.svg' },
+    { name: 'PostgreSQL', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' },
+    { name: 'Redis', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg' },
+    { name: 'Firebase', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg' },
+    { name: 'VS Code', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg' }
   ]
 
   const containerVariants = {
@@ -87,34 +81,26 @@ const Skills = () => {
             </p>
           </motion.div>
 
-          {/* Skills Grid */}
-          <div className="grid lg:grid-cols-2 gap-8">
-            {skillCategories.map((category, index) => (
-              <motion.div
-                key={index}
-                variants={itemVariants}
-                className="card hover:scale-105 transition-transform duration-300"
-              >
-                <div className="flex items-center gap-3 mb-6">
-                  <div className={`w-12 h-12 ${getColorClasses(category.color)} rounded-xl flex items-center justify-center`}>
-                    <category.icon className="w-6 h-6" />
-                  </div>
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{category.title}</h3>
+          {/* Skills Icon Wall - mobile static, desktop subtle hover */}
+          <motion.div variants={itemVariants}>
+            <div className="grid gap-4 [grid-template-columns:repeat(auto-fit,minmax(72px,1fr))]">
+              {techIcons.map((tech) => (
+                <div
+                  key={tech.name}
+                  className="rounded-xl bg-white/60 dark:bg-dark-800/60 border border-gray-200 dark:border-dark-700 p-4 flex items-center justify-center transition-transform md:hover:scale-105 md:hover:shadow-lg"
+                  aria-label={tech.name}
+                  title={tech.name}
+                >
+                  <img
+                    src={tech.src}
+                    alt={tech.name}
+                    loading="lazy"
+                    className="h-8 w-8 md:h-10 md:w-10"
+                  />
                 </div>
-                
-                <div className="flex flex-wrap gap-2">
-                  {category.skills.map((skill, skillIndex) => (
-                    <span
-                      key={skillIndex}
-                      className={`px-3 py-2 rounded-lg text-sm font-medium border ${getColorClasses(category.color)}`}
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </motion.div>
-            ))}
-          </div>
+              ))}
+            </div>
+          </motion.div>
 
           {/* Additional Skills Info */}
           <motion.div variants={itemVariants} className="mt-12 text-center">
