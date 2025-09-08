@@ -17,12 +17,12 @@ const Projects = () => {
       priority: 'main'
     },
     {
-      title: 'PSO-Firefly Portfolio Optimizer',
-      description: 'Advanced portfolio optimization system using Hybrid PSO-FA algorithm and mean-variance analysis for S&P 500 stocks with real-time data integration.',
-      impact: 'Optimized 15 S&P 500 stocks, improving return-risk ratio by 18%. Integrated live data + 10,000-path Monte Carlo simulations.',
-      technologies: ['Python', 'PSO-FA Algorithm', 'Monte Carlo', 'S&P 500', 'Real-time Data', 'Financial Analytics'],
-      icon: TrendingUp,
-      github: 'https://github.com/Rvdhanush/PSO-Firefly-PortfolioOptimizer',
+      title: 'LanPaint-ComfyUI',
+      description: 'Interactive local image editing and generation workflow built on ComfyUI with efficient diffusion pipelines and node customizations.',
+      impact: 'Delivered high-quality controllable image edits with streamlined UX for local creative workflows.',
+      technologies: ['ComfyUI', 'Stable Diffusion', 'Python', 'Node Customization', 'Image Processing'],
+      icon: Code,
+      github: 'https://github.com/Rvdhanush/LanPaint-ComfyUI',
       demo: '#',
       color: 'blue',
       priority: 'main'
@@ -34,6 +34,28 @@ const Projects = () => {
       technologies: ['RAG', 'LLM', 'Web Search', 'Document Grading', 'Python', 'FastAPI', 'Vector DB'],
       icon: Brain,
       github: 'https://github.com/Rvdhanush/-Adaptive-RAG-system-with-web-search',
+      demo: '#',
+      color: 'green',
+      priority: 'main'
+    },
+    {
+      title: 'ML-Enhanced PSO-FA Portfolio',
+      description: 'Portfolio optimization with hybrid PSO-FA enhanced by ML-based risk modeling and evaluation for robust allocation.',
+      impact: 'Improved risk-adjusted returns via ML-assisted parameter tuning and sensitivity analysis.',
+      technologies: ['Python', 'PSO-FA', 'ML', 'Finance', 'Optimization'],
+      icon: TrendingUp,
+      github: 'https://github.com/Rvdhanush/ML-Enhanced-PSO-FA-Portfolio',
+      demo: '#',
+      color: 'indigo',
+      priority: 'main'
+    },
+    {
+      title: 'CLIMATEgpt',
+      description: 'Domain-tuned generative AI assistant for climate and sustainability knowledge with retrieval-augmented responses.',
+      impact: 'Enabled accurate, explainable climate insights by combining curated corpora with controllable generation.',
+      technologies: ['RAG', 'LLM', 'Python', 'FastAPI', 'Vector DB'],
+      icon: Brain,
+      github: 'https://github.com/Rvdhanush/CLIMATEgpt',
       demo: '#',
       color: 'green',
       priority: 'main'

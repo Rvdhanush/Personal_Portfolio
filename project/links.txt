@@ -1,6 +1,6 @@
 1 - https://github.com/Rvdhanush/AI-Powered-Public-Speaking-Training-Platform
 
-2 - https://github.com/Rvdhanush/PSO-Firefly-PortfolioOptimizer
+2 - https://github.com/Rvdhanush/LanPaint-ComfyUI
 
 3- https://github.com/Rvdhanush/-Adaptive-RAG-system-with-web-search
 

@@ -110,7 +110,7 @@ const Hero = () => {
           {isMobile ? (
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a
-                href="/71762134012_PROFILE (1) (2).pdf"
+                href="/DHANUSH_RESUME.pdf"
                 download="Dhanush_Rathinavelu_Resume.pdf"
                 className="btn-primary inline-flex items-center gap-2"
               >
@@ -133,7 +133,7 @@ const Hero = () => {
               className="flex flex-col sm:flex-row gap-4 justify-center items-center"
             >
               <a
-                href="/71762134012_PROFILE (1) (2).pdf"
+                href="/DHANUSH_RESUME.pdf"
                 download="Dhanush_Rathinavelu_Resume.pdf"
                 className="btn-primary inline-flex items-center gap-2"
               >
