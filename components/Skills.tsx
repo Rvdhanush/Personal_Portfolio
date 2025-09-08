@@ -82,27 +82,19 @@ const Skills = () => {
             </p>
           </motion.div>
 
-          {/* Skills Icon Wall - mobile static, desktop subtle hover */}
+          {/* Skills Text Grid - easy to read for recruiters and HR */}
           <motion.div variants={itemVariants}>
-            <div className="grid gap-4 [grid-template-columns:repeat(auto-fit,minmax(80px,1fr))]">
+            <div className="grid gap-3 [grid-template-columns:repeat(auto-fit,minmax(140px,1fr))]">
               {techIcons.map((tech) => (
                 <div
                   key={tech.name}
-                  className="rounded-xl bg-white/60 dark:bg-dark-800/60 border border-gray-200 dark:border-dark-700 p-4 flex items-center justify-center transition-transform md:hover:scale-105 md:hover:shadow-lg md:transform-gpu"
+                  className="rounded-lg bg-white/80 dark:bg-gray-800/80 border border-gray-200 dark:border-gray-700 px-4 py-3 text-center transition-all duration-200 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:border-primary-200 dark:hover:border-primary-700 hover:shadow-md"
                   aria-label={tech.name}
                   title={tech.name}
                 >
-                  {tech.Icon ? (
-                    <tech.Icon className={`h-10 w-10 md:h-12 md:w-12 ${tech.colorClass || 'text-gray-700 dark:text-gray-200'}`} />
-                  ) : (
-                    <img
-                      src={tech.src as string}
-                      alt={tech.name}
-                      loading="lazy"
-                      decoding="async"
-                      className="h-10 w-10 md:h-12 md:w-12"
-                    />
-                  )}
+                  <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                    {tech.name}
+                  </span>
                 </div>
               ))}
             </div>
