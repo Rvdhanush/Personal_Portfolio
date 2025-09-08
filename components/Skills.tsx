@@ -4,37 +4,24 @@ import { motion } from 'framer-motion'
 import { Code, Database, Cloud, Wrench, Sigma, BarChart3 } from 'lucide-react'
 
 const Skills = () => {
-  // Devicon-based icon set for compact, responsive grid
-  type Tech = { name: string; src?: string; Icon?: any; colorClass?: string }
-  const techIcons: Tech[] = [
-    { name: 'Python', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
-    { name: 'NumPy', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg' },
-    { name: 'Pandas', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg' },
-    { name: 'SciPy', Icon: Sigma, colorClass: 'text-indigo-500' },
-    { name: 'scikit-learn', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg' },
-    { name: 'TensorFlow', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg' },
-    { name: 'PyTorch', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg' },
-    { name: 'Keras', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/keras/keras-original.svg' },
-    { name: 'OpenCV', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg' },
-    { name: 'spaCy', src: 'https://cdn.simpleicons.org/spacy/09A3D5' },
-    { name: 'Jupyter', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg' },
-    { name: 'Anaconda', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/anaconda/anaconda-original.svg' },
-    { name: 'Matplotlib', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg' },
-    { name: 'Seaborn', Icon: BarChart3, colorClass: 'text-sky-600' },
-    { name: 'Plotly', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/plotly/plotly-original.svg' },
-    { name: 'FastAPI', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg' },
-    { name: 'Flask', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg' },
-    { name: 'Docker', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' },
-    { name: 'Kubernetes', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg' },
-    { name: 'AWS', src: 'https://www.vectorlogo.zone/logos/amazon_aws/amazon_aws-icon.svg' },
-    { name: 'GCP', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg' },
-    { name: 'PostgreSQL', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' },
-    { name: 'MongoDB', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg' },
-    { name: 'Redis', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg' },
-    { name: 'Selenium', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg' },
-    { name: 'Git', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
-    { name: 'Hugging Face', src: 'https://cdn.simpleicons.org/huggingface/FFCC4D' },
-    { name: 'VS Code', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg' }
+  // Categorized skills with uniform blue styling
+  const skillCategories = [
+    {
+      title: 'Programming Languages',
+      skills: ['Python', 'JavaScript', 'TypeScript', 'SQL', 'R', 'Bash']
+    },
+    {
+      title: 'Tools & Frameworks',
+      skills: ['FastAPI', 'Flask', 'Docker', 'Kubernetes', 'Git', 'VS Code', 'Jupyter', 'Anaconda', 'Selenium']
+    },
+    {
+      title: 'ML & AI',
+      skills: ['TensorFlow', 'PyTorch', 'Keras', 'scikit-learn', 'NumPy', 'Pandas', 'SciPy', 'OpenCV', 'spaCy', 'Hugging Face', 'Matplotlib', 'Seaborn', 'Plotly']
+    },
+    {
+      title: 'Cloud Platforms & Databases',
+      skills: ['AWS', 'GCP', 'PostgreSQL', 'MongoDB', 'Redis']
+    }
   ]
 
   const containerVariants = {
@@ -52,14 +39,14 @@ const Skills = () => {
     visible: { opacity: 1, y: 0 }
   }
 
-  const getColorClasses = (color: string) => {
-    const colors = {
-      primary: 'bg-primary-100 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300 border-primary-200 dark:border-primary-700',
-      blue: 'bg-blue-100 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 border-blue-200 dark:border-blue-700',
-      green: 'bg-green-100 dark:bg-green-900/20 text-green-700 dark:text-green-300 border-green-200 dark:border-green-700',
-      purple: 'bg-purple-100 dark:bg-purple-900/20 text-purple-700 dark:text-purple-300 border-purple-200 dark:border-purple-700'
+  const getCategoryIcon = (title: string) => {
+    const icons = {
+      'Programming Languages': Code,
+      'Tools & Frameworks': Wrench,
+      'ML & AI': Brain,
+      'Cloud Platforms & Databases': Database
     }
-    return colors[color as keyof typeof colors] || colors.primary
+    return icons[title as keyof typeof icons] || Code
   }
 
   return (
@@ -82,22 +69,40 @@ const Skills = () => {
             </p>
           </motion.div>
 
-          {/* Skills Text Grid - easy to read for recruiters and HR */}
-          <motion.div variants={itemVariants}>
-            <div className="grid gap-3 [grid-template-columns:repeat(auto-fit,minmax(140px,1fr))]">
-              {techIcons.map((tech) => (
-                <div
-                  key={tech.name}
-                  className="rounded-lg bg-white/80 dark:bg-gray-800/80 border border-gray-200 dark:border-gray-700 px-4 py-3 text-center transition-all duration-200 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:border-primary-200 dark:hover:border-primary-700 hover:shadow-md"
-                  aria-label={tech.name}
-                  title={tech.name}
-                >
-                  <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                    {tech.name}
-                  </span>
+          {/* Categorized Skills with Uniform Blue Styling */}
+          <motion.div variants={itemVariants} className="space-y-8">
+            {skillCategories.map((category, categoryIndex) => {
+              const CategoryIcon = getCategoryIcon(category.title)
+              return (
+                <div key={categoryIndex} className="space-y-4">
+                  {/* Category Header */}
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 bg-primary-100 dark:bg-primary-900/20 text-primary-600 dark:text-primary-400 rounded-lg flex items-center justify-center">
+                      <CategoryIcon className="w-5 h-5" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                      {category.title}
+                    </h3>
+                  </div>
+                  
+                  {/* Skills Grid */}
+                  <div className="grid gap-3 [grid-template-columns:repeat(auto-fit,minmax(140px,1fr))]">
+                    {category.skills.map((skill) => (
+                      <div
+                        key={skill}
+                        className="rounded-lg bg-primary-50 dark:bg-primary-900/20 border border-primary-200 dark:border-primary-700 px-4 py-3 text-center transition-all duration-200 hover:bg-primary-100 dark:hover:bg-primary-900/30 hover:border-primary-300 dark:hover:border-primary-600 hover:shadow-md"
+                        aria-label={skill}
+                        title={skill}
+                      >
+                        <span className="text-sm font-medium text-primary-700 dark:text-primary-300">
+                          {skill}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              ))}
-            </div>
+              )
+            })}
           </motion.div>
 
           {/* Additional Skills Info */}
