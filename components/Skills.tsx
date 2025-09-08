@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Code, Database, Cloud, Wrench, Sigma, BarChart3 } from 'lucide-react'
+import { Code, Database, Cloud, Wrench, Sigma, BarChart3, Brain } from 'lucide-react'
 
 const Skills = () => {
   // Categorized skills with uniform blue styling
