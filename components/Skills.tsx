@@ -8,11 +8,11 @@ const Skills = () => {
   const skillCategories = [
     {
       title: 'Programming Languages',
-      skills: ['Python', 'JavaScript', 'TypeScript', 'SQL', 'R', 'Bash']
+      skills: ['Python', 'SQL']
     },
     {
       title: 'Tools & Frameworks',
-      skills: ['FastAPI', 'Flask', 'Docker', 'Kubernetes', 'Git', 'VS Code', 'Jupyter', 'Anaconda', 'Selenium']
+      skills: ['FastAPI', 'Flask', 'Docker', 'Kubernetes', 'Git', 'VS Code', 'Jupyter', 'Anaconda', 'Selenium', 'Colab', 'LangChain', 'LangGraph', 'ComfyUI']
     },
     {
       title: 'ML & AI',
@@ -20,7 +20,7 @@ const Skills = () => {
     },
     {
       title: 'Cloud Platforms & Databases',
-      skills: ['AWS', 'GCP', 'PostgreSQL', 'MongoDB', 'Redis']
+      skills: ['AWS', 'GCP', 'PostgreSQL', 'MongoDB', 'Redis', 'Analytics', 'PowerBI', 'Tableau', 'Pub/Sub', 'BigQuery', 'Cloud Storage']
     }
   ]
 
